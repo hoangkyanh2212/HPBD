@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng Nhập</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        .login-form {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 90%;
+            max-width: 400px; /* Đảm bảo trên màn hình lớn không vượt quá 400px */
+        }
+        .login-form h2 {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .login-form input {
+            width: 95%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        .login-form button {
+            width: 100%;
+            padding: 15px;
+            background: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .login-form button:hover {
+            background: #0056b3;
+        }
+        .error {
+            color: red;
+            text-align: center;
+            font-size: 14px;
+        }
+        @media (max-width: 600px) {
+            .login-form {
+                padding: 15px;
+            }
+            .login-form input, 
+            .login-form button {
+                padding: 12px;
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="login-form">
+        <h2>BẠN CÓ CẦN MÌNH GỢI Ý KO NHỈ <3</h2>
+        <div id="error-message" class="error"></div>
+        <input type="password" id="password" placeholder="Nhập mật khẩu" />
+        <button onclick="login()">Đăng nhập</button>
+    </div>
+
+    <script>
+        const CORRECT_PASSWORD = "22122004"; // Mật khẩu cố định
+
+        function login() {
+            const passwordInput = document.getElementById("password").value;
+            const errorMessage = document.getElementById("error-message");
+
+            if (passwordInput === CORRECT_PASSWORD) {
+                // Chuyển hướng đến trang mới
+                window.location.href = "trangchu.html"; // Thay bằng URL của bạn
+            } else {
+                errorMessage.textContent = "Mật khẩu không đúng.Bạn nên thử nhập ngày nào đó xem sao";
+            }
+        }
+    </script>
+</body>
+</html>
